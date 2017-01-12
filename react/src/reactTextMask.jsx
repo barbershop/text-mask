@@ -34,6 +34,8 @@ export const MaskedInput = React.createClass({
   render() {
     const props = {...this.props}
 
+	console.log('RENDER');
+
     delete props.mask
     delete props.guide
     delete props.pipe
@@ -47,15 +49,20 @@ export const MaskedInput = React.createClass({
     return (
       <input
         {...props}
-        onInput={this.onChange}
+        onKeyUp={this.onChange}
         defaultValue={this.props.value}
+		autoComplete={false}
         ref={(inputElement) => (this.inputElement = inputElement)}
+		id="tinput"
       />
     )
   },
 
   onChange(event) {
+	  console.log('ON CHANGE');
     this.textMaskInputElement.update()
+	// this.inputElement.selectionStart = this.inputElement.value.length;
+	// this.inputElement.selectionEnd = this.inputElement.value.length;
 
     if (typeof this.props.onChange === 'function') {
       this.props.onChange(event)

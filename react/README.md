@@ -1,5 +1,9 @@
 # React Input Mask
 
+## NOT OFFICIAL. THIS IS A FORKED VERSION OF THE REPOSITORY!
+
+This was forked and republished in order to fix: https://github.com/text-mask/text-mask/issues/300
+
 ## Getting started
 
 First, install it.
